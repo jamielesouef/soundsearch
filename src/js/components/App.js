@@ -1,4 +1,8 @@
 import React from 'react';
+import { fetchUser, fetchUserTracks } from '../actions/actions';
+
+fetchUser('rave_on');
+fetchUserTracks('rave_on');
 
 function App() {
   return (
