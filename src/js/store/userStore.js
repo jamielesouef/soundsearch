@@ -1,17 +1,19 @@
 import { Store, toImmutable } from 'nuclear-js';
 import actions from '../actions/actionTypes';
 
-const receiveUser = (state, { user }) => {
-  console.debug('receiveUser', user);
-  return toImmutable(user);
-};
+const initialState = toImmutable({});
+
+const resetUser = () => initialState;
+
+const receiveUser = (state, { user }) => toImmutable(user);
 
 export default Store({
   getInitialState() {
-    return toImmutable({});
+    return initialState;
   },
 
   initialize() {
     this.on(actions.RECEIVE_USER, receiveUser);
+    this.on(actions.RESET_USER, resetUser);
   },
 });

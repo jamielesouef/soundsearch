@@ -1,41 +1,41 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'nuclear-js-react-addons';
-import { fetchUser } from '../actions/actions';
 import getters from '../getters/getters';
+import TrackContainer from './TrackContainer';
+import Search from './Search';
 
 @connect(() => ({
   user: getters.user,
+  tracks: getters.tracks,
 }))
 class App extends Component {
 
   componentWillMount() {
-    fetchUser('rave_on');
+
   }
 
   render() {
 
-    const { user } = this.props
+    const { user, tracks } = this.props;
 
     return (
       <div>
-        Hello, {user.get('username')}
+        <div>Hello, {user.get('username')}</div>
+        <Search />
+        <TrackContainer tracks={tracks} />
       </div>
     );
   }
 }
 
-// const App = React.createClass({
-//   mixins: [reactor.ReactMixin],
-//
+App.propTypes = {
+  user: PropTypes.object,
+  tracks: PropTypes.object,
+};
 
-// });
-
-
-App.propTypes = {};
 App.contextTypes = {
   reactor: PropTypes.object.isRequired,
 };
 
-App.defaultProps = {};
 
 export default App;

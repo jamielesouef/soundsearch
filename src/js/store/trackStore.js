@@ -1,17 +1,19 @@
 import { Store, toImmutable } from 'nuclear-js';
 import actions from '../actions/actionTypes';
 
-const receiveTracks = (state, { tracks }) => {
-  console.debug('receiveTracks tracks', tracks);
-  return toImmutable(tracks);
-};
+const initialState = toImmutable([]);
+
+const receiveTracks = (state, { tracks }) => toImmutable(tracks.collection);
+
+const resetTracks = () => initialState;
 
 export default Store({
   getInitialState() {
-    return toImmutable({});
+    return initialState;
   },
 
   initialize() {
+    this.on(actions.RESET_TRACKS, resetTracks);
     this.on(actions.RECEIVE_TRACKS, receiveTracks);
   },
 });
