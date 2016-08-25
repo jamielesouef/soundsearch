@@ -5,13 +5,14 @@ function TrackContainer(props) {
 
   const { tracks } = props;
 
+  console.debug('tracks', tracks);
   if (!tracks.size) {
     return null;
   }
 
   return (
     <div>
-      {tracks.map((track, index) => <Track track={track} key={index} />)}
+      {tracks.map((track, index) => <Track track={track.toJS()} key={index} />)}
     </div>
   );
 }

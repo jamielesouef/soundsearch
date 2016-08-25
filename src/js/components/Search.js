@@ -1,16 +1,20 @@
-import React, { Component } from 'react';
-import { search } from '../actions/actions';
+import React, { PureComponent } from 'react';
+import { search, filter } from '../actions/actions';
 
 
-class Search extends Component {
+class Search extends PureComponent {
 
   static propTypes = {};
   static defaultProps = {};
 
   search = () => {
-
     const { value } = this.searchField;
     search(value);
+  }
+
+  filter = event => {
+    const { value } = event.target;
+    filter(value);
   }
 
   render() {
@@ -20,6 +24,8 @@ class Search extends Component {
           this.searchField = ref;
         }} placeholder="Search Soundcloud User..." />
         <button onClick={this.search} >Search</button>
+
+        <input type="text" onChange={this.filter} />
       </div>
     );
   }

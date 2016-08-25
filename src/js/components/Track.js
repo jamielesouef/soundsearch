@@ -5,13 +5,13 @@ function Track(props) {
   const { track } = props;
   return (
     <div>
-      {track.get('title')}
+      {track.title}
     </div>
   );
 }
 
 Track.propTypes = {
-  track: PropTypes.func.isRequried,
+  track: PropTypes.object.isRequired,
 };
 Track.defaultProps = {};
 
