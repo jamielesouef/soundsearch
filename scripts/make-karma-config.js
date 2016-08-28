@@ -11,7 +11,7 @@ module.exports = function makeKarmaConfig(options) {
       { test: /\.js?$/, exclude: /node_modules/, loader: 'babel' },
       {
         test: /\.scss/,
-        loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]!postcss!sass',
+        loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]--[hash:base64:10]!postcss!sass',
       },
       { test: /\.css$/, loader: 'style!css' },
     ],

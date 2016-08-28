@@ -96,7 +96,7 @@ module.exports = function makeWepackConfig(options) {
   if (options.separateStylesheet) {
     config.module.loaders.push({
       test: /\.scss$/,
-      loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]!postcss!sass'),
+      loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]--[hash:base64:10]!postcss!sass'),
     });
     config.module.loaders.push({
       test: /\.css$/,
@@ -106,7 +106,7 @@ module.exports = function makeWepackConfig(options) {
   } else {
     config.module.loaders.push({
       test: /\.scss$/,
-      loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]!postcss!sass'),
+      loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]--[hash:base64:10]!postcss!sass'),
     });
     config.module.loaders.push({ test: /\.css$/, loader: 'style!css!postcss' });
   }

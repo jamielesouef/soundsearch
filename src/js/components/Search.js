@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
 import { search, filter } from '../actions/actions';
-
+import Button from './Button';
+import styles from './Search.scss';
+import { classnames } from '../utils/cssUtils';
 
 class Search extends PureComponent {
 
@@ -19,11 +21,18 @@ class Search extends PureComponent {
 
   render() {
     return (
-      <div>
-        <input type="text" ref={ref => {
-          this.searchField = ref;
-        }} placeholder="Search Soundcloud User..." />
-        <button onClick={this.search} >Search</button>
+      <div className="row" >
+        <div className="col-xs-12" >
+          <input className={classnames('form-control', styles.searchInput)}
+                 type="text"
+                 ref={ref => {
+                   this.searchField = ref;
+                 }}
+                 placeholder="Search Soundcloud User..." />
+        </div>
+        <div className="col-xs-12" >
+          <Button onClick={this.search} >Search</Button>
+        </div>
 
         <input type="text" onChange={this.filter} />
       </div>

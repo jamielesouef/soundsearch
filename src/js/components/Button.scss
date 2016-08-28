@@ -1,0 +1,7 @@
+@import '../../css/_variables.scss';
+
+.button {
+  border: $color-light__outline solid 1px;
+  color: $color-dark__text;
+  width: 100%;
+}

@@ -1,13 +1,17 @@
 import React, { PropTypes } from 'react';
 
-function Header({ name }) {
+function Header() {
   console.debug('****** render');
   return (
-    <div>
-      Hello, {name}
+    <div className="row">
+      <Nav />
     </div>
   );
 }
+
+const Nav = () => (
+  <div className="col-xs-12"><h1>SC Search</h1></div>
+);
 
 Header.propTypes = {
   name: PropTypes.string,

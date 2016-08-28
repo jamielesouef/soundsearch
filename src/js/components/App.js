@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'nuclear-js-react-addons';
+
 import getters from '../getters/getters';
 import Search from './Search';
 import TrackContainer from './TrackContainer';
@@ -11,7 +12,7 @@ const mapStateToProps = () => ({
 });
 
 const App = ({ user, tracks }) => (
-  <div>
+  <div className="container">
     <Header name={user.get('username')} />
     <Search />
     <TrackContainer tracks={tracks} />
