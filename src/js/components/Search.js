@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { search, filter } from '../actions/actions';
 import Button from './Button';
 import styles from './Search.scss';
-import { classnames } from '../utils/cssUtils';
+import { toClassString } from '../utils/cssUtils';
 
 class Search extends PureComponent {
 
@@ -23,7 +23,7 @@ class Search extends PureComponent {
     return (
       <div className="row" >
         <div className="col-xs-12" >
-          <input className={classnames('form-control', styles.searchInput)}
+          <input className={toClassString('form-control', styles.searchInput)}
                  type="text"
                  ref={ref => {
                    this.searchField = ref;

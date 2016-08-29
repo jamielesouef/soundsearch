@@ -1,8 +1,9 @@
 import React, { PropTypes } from 'react';
+import { toClassString } from '../utils/cssUtils.js';
 import styles from './Button.scss';
 
 const Button = ({ onClick, className, children }) => {
-  const classes = [className, 'btn btn-default', styles.button].join(' ');
+  const classes = toClassString(className, 'btn btn-default', styles.button);
   return (<button className={classes}
                   onClick={onClick} >{ children }</button>);
 };
