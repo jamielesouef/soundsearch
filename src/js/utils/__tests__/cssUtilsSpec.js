@@ -18,6 +18,14 @@ describe('cssUtils', () => {
 
       expect(objToArray(test)).toEqual(['foo', 'baz', 'qux']);
     });
+
+    it('should return an unmodified item if it is not an object', () => {
+      expect(objToArray('foo')).toEqual('foo');
+      expect(objToArray(['foo'])).toEqual(['foo']);
+      expect(objToArray(1)).toEqual(1);
+      expect(objToArray(true)).toEqual(true);
+      expect(objToArray(undefined)).toEqual(undefined);
+    });
   });
 
   describe('arrayToString', () => {
