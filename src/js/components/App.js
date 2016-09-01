@@ -12,6 +12,7 @@ const mapStateToProps = () => ({
 });
 
 const App = ({ user, tracks }) => (
+
   <div className="container">
     <Header name={user.get('username')} />
     <Search />

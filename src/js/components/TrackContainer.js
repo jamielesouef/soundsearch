@@ -2,17 +2,11 @@ import React, { PropTypes } from 'react';
 import Track from './Track';
 
 function TrackContainer(props) {
-
   const { tracks } = props;
-
-  console.debug('tracks', tracks);
-  if (!tracks.size) {
-    return null;
-  }
 
   return (
     <div>
-      {tracks.map((track, index) => <Track track={track.toJS()} key={index} />)}
+      {tracks.map((track, index) => <Track track={track} key={index} />)}
     </div>
   );
 }

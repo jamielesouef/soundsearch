@@ -1,17 +1,14 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, PureComponent } from 'react';
 
-function Header() {
-  console.debug('****** render');
-  return (
-    <div className="row">
-      <Nav />
-    </div>
-  );
+class Header extends PureComponent {
+  render() {
+    return (
+      <div className="row">
+        <div className="col-xs-12"><h1>SC Search</h1></div>
+      </div>
+    );
+  }
 }
-
-const Nav = () => (
-  <div className="col-xs-12"><h1>SC Search</h1></div>
-);
 
 Header.propTypes = {
   name: PropTypes.string,
