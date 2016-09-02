@@ -1,22 +1,19 @@
 import React, { PureComponent } from 'react';
-import { search, filter } from '../actions/actions';
+import actions from '../actions/actions';
 import Button from './Button';
 import styles from './Search.scss';
 import { toClassString } from '../utils/cssUtils';
 
 class Search extends PureComponent {
-
-  static propTypes = {};
-  static defaultProps = {};
-
+  
   search = () => {
     const { value } = this.searchField;
-    search(value);
+    actions.search(value);
   }
 
   filter = event => {
     const { value } = event.target;
-    filter(value);
+    actions.filter(value);
   }
 
   render() {

@@ -1,6 +1,11 @@
 import React, { PropTypes, PureComponent } from 'react';
 
 class Header extends PureComponent {
+
+  myFunc = () => {
+
+  }
+
   render() {
     return (
       <div className="row">

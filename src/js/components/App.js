@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'nuclear-js-react-addons';
-
 import getters from '../getters/getters';
 import Search from './Search';
 import TrackContainer from './TrackContainer';
