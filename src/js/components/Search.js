@@ -5,7 +5,7 @@ import styles from './Search.scss';
 import { toClassString } from '../utils/cssUtils';
 
 class Search extends PureComponent {
-  
+
   search = () => {
     const { value } = this.searchField;
     actions.search(value);
@@ -30,8 +30,12 @@ class Search extends PureComponent {
         <div className="col-xs-12" >
           <Button onClick={this.search} >Search</Button>
         </div>
-
-        <input type="text" onChange={this.filter} />
+        <div className="col-xs-12" >
+          <input type="text"
+                 lassName={toClassString('form-control', styles.searchInput)}
+                 onChange={this.filter}
+                 placeholder="Filter results..." />
+        </div>
       </div>
     );
   }

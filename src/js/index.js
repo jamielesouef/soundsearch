@@ -10,8 +10,6 @@ import reactor from './store/reactor';
 import userStore from './store/userStore';
 import trackStore from './store/trackStore';
 
-reactor.registerStores();
-
 reactor.registerStores({
   user: userStore,
   tracks: trackStore,

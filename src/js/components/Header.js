@@ -9,7 +9,7 @@ class Header extends PureComponent {
   render() {
     return (
       <div className="row">
-        <div className="col-xs-12"><h1>SC Search</h1></div>
+        <div className="col-xs-12"><h1>Search Soundcloud</h1></div>
       </div>
     );
   }
